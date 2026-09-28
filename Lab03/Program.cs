@@ -1,0 +1,54 @@
+﻿namespace Lab03
+/*
+* Student ID : 1690700685
+* Name       : Witul Thawan
+* Section    : 129A
+* No.        : N/A
+* Course     : GI113 Computer Programming (GI)
+*/
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+
+            const int MaxLevel = 10;
+
+            var bossName = "Kirin";
+            var rank = 'S';
+            int level = 7;
+            int maxHp = 240;
+            int currentHp = 115;
+            float attackPower = 42.5f;
+            double critMultiplier = 1.75;
+            bool isBoss = true;
+
+            Console.WriteLine("===== KIRIN SAVE CONVERTER =====");
+            Console.WriteLine($"Name : {bossName}\nRank : {rank}\nLevel : {level} / {MaxLevel}\nHP: {currentHp} / {maxHp}\n" +
+                $"Attack Power: {attackPower}\nCrit Multiplier: {critMultiplier}\nIs Boss {isBoss}");
+
+            Console.WriteLine();
+            Console.WriteLine("------ Implicit Conversion: HP as double ------");
+            double currentHpDouble = currentHp;
+            Console.WriteLine($"HP (double): {currentHpDouble}");
+            Console.WriteLine();
+
+            Console.WriteLine("------ Exact HP Percent (no integer truncation) ------");
+            double hpPercent = currentHpDouble * 100 / maxHp;
+            Console.WriteLine($"HP Percent (exact): {hpPercent}%");
+            Console.WriteLine();
+
+            Console.WriteLine("------ Explicit Cast: Attack Power -> Display Int ------");
+            int attackInt = (int)attackPower;
+            Console.WriteLine($"Attack Power (int cast): {attackInt}%");
+            Console.WriteLine();
+
+            Console.WriteLine("------ Cast vs Convert: Crit Multiplier ------");
+            int critCast = (int)critMultiplier;
+            int critConvert = Convert.ToInt32(critMultiplier);
+            Console.WriteLine($"Crit Multiplier (int cast): {critCast}");
+            Console.WriteLine($"Crit Multiplier (Convert rounded): {critConvert}");
+        }
+    }
+}
